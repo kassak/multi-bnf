@@ -1,11 +1,9 @@
 package com.github.kassak.multi.bnf;
 
-import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.psi.PsiElement;
 import com.intellij.refactoring.rename.naming.AutomaticRenamer;
 import com.intellij.refactoring.rename.naming.AutomaticRenamerFactory;
 import com.intellij.usageView.UsageInfo;
-import com.intellij.util.containers.ContainerUtil;
 import org.intellij.grammar.psi.BnfRule;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
@@ -14,8 +12,6 @@ import org.jetbrains.annotations.Nullable;
 import java.util.Collection;
 
 public class MultiBnfRenameFactory implements AutomaticRenamerFactory {
-  private static final String KEY = "MultiBnfRenameFactory.ENABLED";
-
   @Override
   public boolean isApplicable(@NotNull PsiElement psiElement) {
     return psiElement instanceof BnfRule;
@@ -30,12 +26,12 @@ public class MultiBnfRenameFactory implements AutomaticRenamerFactory {
 
   @Override
   public boolean isEnabled() {
-    return PropertiesComponent.getInstance().getBoolean(KEY, true);
+    return MultiBnfUtils.isEnabled();
   }
 
   @Override
   public void setEnabled(boolean enabled) {
-    PropertiesComponent.getInstance().setValue(KEY, enabled, true);
+    MultiBnfUtils.setEnabled(enabled);
   }
 
   @NotNull

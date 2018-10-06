@@ -10,5 +10,6 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <automaticRenamerFactory implementation="com.github.kassak.multi.bnf.MultiBnfRenameFactory"/>
+    <findUsagesHandlerFactory implementation="com.github.kassak.multi.bnf.MultiBnfFindUsagesFactory"/>
   </extensions>
 </idea-plugin>

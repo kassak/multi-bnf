@@ -3,3 +3,4 @@
 build/*
 staging/*
 gradle.properties
+*.iml
