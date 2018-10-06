@@ -1,0 +1,14 @@
+<idea-plugin url="https://github.com/kassak/geo-support">
+  <id>com.github.kassak.multi-bnf</id>
+  <name>multi-bnf</name>
+  <description>Simplifies work with multiple BNF files with the 34same structure</description>
+  <vendor url="https://github.com/kassak"/>
+
+  <depends>com.intellij.modules.lang</depends>
+  <depends>com.intellij.modules.platform</depends>
+  <depends>org.jetbrains.idea.grammar</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <automaticRenamerFactory implementation="com.github.kassak.multi.bnf.MultiBnfRenameFactory"/>
+  </extensions>
+</idea-plugin>
